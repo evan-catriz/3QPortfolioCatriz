@@ -77,7 +77,7 @@
     </header>
     <section>
       <h1 class="title">Club Application</h1>
-      <form id="dForm" action="submit" method="post">
+      <form onsubmit="return confirmSubmit();" onreset="return confirmReset();">
         <fieldset>
           <legend>Your Credentials</legend><br/>
           <label> StudentID: 
@@ -141,6 +141,21 @@
         </fieldset> 
       </form>
     </section>
-    <script src="q3e3script.js"></script>
+
+    <script>
+      function confirmSubmit(){
+        if(!confirm("Do you want to submit?")){
+          return false;
+        }
+      }
+
+      function confirmReset(){
+        if(!confirm("Do you want to reset?")){
+          event.preventDefault();
+          return false;
+        }
+      }
+    </script>
+
   </body>
 </html>
