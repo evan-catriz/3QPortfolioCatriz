@@ -44,6 +44,11 @@
             
         }
 
+     .fillup {
+        background-color: rgb(255,211,172);
+       border: 2px solid red;
+     }
+
         fieldset:nth-child(2) {
              margin-top: 20px;
         }
@@ -52,7 +57,7 @@
             border: 2px solid rgb(0, 0, 0);
             border-radius: 10px;
             padding: 10px;
-            background-color: rgba(255,211,172, 90% )
+            background-color: rgba(255,211,172, 90%);
         }
         label {
              margin: 5%;
@@ -81,23 +86,23 @@
         <fieldset>
           <legend>Your Credentials</legend><br/>
           <label> StudentID: 
-            <input type="number" name="usid" id="usid" required />
+            <input type="number" name="usid" id="usid" required onblur="requiredChange(this)"/>
           </label><br/><br/>
           <label> Full Name:
-            <input type="text" name="uname" id="uname" required />
+            <input type="text" name="uname" id="uname" required onblur="requiredChange(this)"/>
           </label><br/><br/>
           <label> Date Of Birth:
-            <input type="date" name="dob" id="dob" required />
+            <input type="date" name="dob" required/>
           </label><br/><br/>
           <label> Email Address:
-            <input type="email" name="uemail" id="uemail" required />
+            <input type="email" name="uemail" id="uemail" required onblur="requiredChange(this)"/>
           </label><br/><br/>
         </fieldset>
 
         <fieldset>
             <legend>Extra Details</legend><br/>
             <label> Mobile Number:
-                <input type="text" name="umnum" id="umnum" required />
+                <input type="text" name="umnum" id="umnum" required onblur="requiredChange(this)"/>
               </label><br/><br/>
               <label> Grade Level:
                 <select name="glevel" required>
@@ -128,7 +133,7 @@
         <fieldset>
             <legend>Reasoning</legend><br/>
                 <label> Why do you want to join this club?: 
-                    <textarea name="about" id="about">
+                    <textarea name="about" id="about" onblur="requiredChange(this)">
                     
                     </textarea>
                 </label><br/><br/>
@@ -149,11 +154,16 @@
         }
       }
 
-      function confirmReset(){
-        if(!confirm("Do you want to reset?")){
-          event.preventDefault();
-          return false;
-        }
+      function confirmReset() {
+      return confirm("All data will be cleared. Continue?");
+    }
+
+      function requiredChange(element) {
+      if (element.value.trim() === "") {
+        element.classList.add("fillup");
+      } else {
+        element.classList.remove("fillup");
+      }
       }
     </script>
 
