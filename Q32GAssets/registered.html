@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Registered Accounts</title>
+</head>
+
+<body>
+  <h2>Submitted Information</h2>
+    <thead>
+        <tr>
+            <th>Club</th>
+            <th>StudentID</th>
+            <th>FullName</th>
+            <th>Grade</th>
+            <th>Email</th>
+            <th>Mobile</th>
+            <th>Intern/Extern</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><span id="udisp1"></span></td>
+            <td><span id="udisp2"></span></td>
+            <td><span id="udisp3"></span></td>
+            <td><span id="udisp4"></span></td>
+            <td><span id="udisp5"></span></td>
+            <td><span id="udisp6"></span></td>
+            <td><span id="udisp7"></span></td>
+            
+        </tr>
+    </tbody>
+    </table>
+
+  <script>
+      const usid = localStorage.getItem("username");
+      const uname = localStorage.getItem("userdob");
+      const uemail = localStorage.getItem("useremail");
+      const unum = localStorage.getItem("usernum");
+      const glevel = localStorage.getItem("userglevel");
+      const residence = localStorage.getItem("userres");
+      const club = localStorage.getItem("userclub");
+
+      document.getElementById("udisp1").textContent = club;
+      document.getElementById("udisp2").textContent = usid;
+      document.getElementById("udisp3").textContent = uname;
+      document.getElementById("udisp4").textContent = glevel;
+      document.getElementById("udisp5").textContent = uemail;
+      document.getElementById("udisp6").textContent = unum;
+      document.getElementById("udisp7").textContent = residence;
+  </script>
+
+</body>
+</html>

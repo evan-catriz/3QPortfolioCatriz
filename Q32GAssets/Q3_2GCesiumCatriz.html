@@ -9,9 +9,7 @@
     <title>Sample Form</title>
     <!-- updated external css link to show how to share it between repository -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="../../styles.css" />
     <link rel="icon" href="../../assets/pshslogo.png" sizes="32x32" type="image/png">
-    <script src="script.js" defer></script>
    <style>
     body{
         padding: 25px;
@@ -63,8 +61,6 @@
   <body>
      <header>
         <div>
-            <img src="../../assets/pshslogo.png" alt="pshs logo" 
-               title="The Official Logo" width="50px" height="50px" />
             <h1>
                 Graded Exercise 2    
             </h1>
@@ -97,10 +93,10 @@
         <fieldset>
             <legend>Extra Details</legend><br/>
             <label> Mobile Number:
-                <input type="text" name="umnum" id="umnum" required />
+                <input type="text" name="unum" id="unum" required />
               </label><br/><br/>
               <label> Grade Level:
-                <select name="glevel" required>
+                <select name="glevel" id ="glevel" required>
                     <option value="">Select Grade</option>
                     <option value="g7">Grade 7</option>
                     <option value="g8">Grade 8</option>
@@ -111,11 +107,11 @@
                 </select>
               </label><br/><br/>
                 <label>Residence:
-                    <input type="radio" name="residence" value="intern" />Intern
-                    <input type="radio" name="residence" value="extern" />Extern
+                    <input type="radio" name="residence" id="residence" value="intern" />Intern
+                    <input type="radio" name="residence" id="residence" value="extern" />Extern
                 </label><br/><br/>
                 <label>Clubs:
-                    <select name="club" required>
+                    <select name="club" id="club"required>
                         <option value="">Select Club</option>
                         <option value="sport">Sports</option>
                         <option value="art">Arts</option>
@@ -155,6 +151,27 @@
           return false;
         }
       }
+
+      const usid = document.getElementById("usid").value.trim();
+      const uname = document.getElementById("uname").value.trim();
+      const dob = document.getElementById("dob").value.trim();
+      const uemail = document.getElementById("uemail").value.trim();
+      const unum = document.getElementById("unum").value.trim();
+      const glevel = document.getElementById("glevel").value.trim();
+      const residence = document.getElementById("residence").value.trim();
+      const club = document.getElementById("club").value.trim();
+      const reasoning = document.getElementById("about").value.trim();
+
+      localStorage.setItem("userid", usid);
+      localStorage.setItem("username", uname);
+      localStorage.setItem("userdob", dob);
+      localStorage.setItem("useremail", uemail);
+      localStorage.setItem("usernum", unum);
+      localStorage.setItem("userglevel", glevel);
+      localStorage.setItem("userres", residence);
+      localStorage.setItem("userclub", club);
+      localStorage.setItem("userreas", reasoning);
+
     </script>
 
   </body>
